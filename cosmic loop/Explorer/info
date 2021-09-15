@@ -1,0 +1,46 @@
+Environment simulation
+Cosmic Circuit
+
+Training Time
+180 mins
+
+def reward_function(params):
+
+    if params["all_wheels_on_track"] and params["steps"] > 0:
+        reward = ((params["progress"] / params["steps"]) * 100) + (params["speed"]**2)
+    else:
+        reward = 0.01
+        
+    return float(reward)
+    
+    Sensor(s)
+Camera
+Action space type
+Continuous
+Action space
+Speed: [ 0.5 : 2.5 ] m/s
+Steering angle: [ -30 : 30 ] °
+
+Framework
+Tensorflow
+Reinforcement learning algorithm
+PPO
+
+Hyperparameter
+Value
+Gradient descent batch size	64
+Entropy	0.01
+Discount factor	0.999
+Loss type	Huber
+Learning rate	0.0003
+Number of experience episodes between each policy-updating iteration	20
+Number of epochs	10
+
+Evaluation results
+Trial
+Time (MM:SS.mmm)
+Trial results (% track completed)
+Status
+1	00:48.332	100%	Lap complete
+2	00:51.089	100%	Lap complete
+3	00:49.126	100%	Lap complete
